@@ -1,82 +1,98 @@
 # cryptocurrency-wallet
 Developed a decentralized Cryptocurrency Wallet to store, send, and receive Ethereum (ETH) on the Ethereum Blockchain.
+# 💰 Ethereum Cryptocurrency Wallet
 
+A decentralized Cryptocurrency Wallet built on the Ethereum blockchain that allows users to securely store, send, and receive ETH. The project demonstrates smart contract development, blockchain interaction, and secure transaction handling using Solidity and Ethereum development tools.
 
 ---
 
 ## 🚀 Features
 
-- Permanently delete files of any type from the system  
-- Implements multi-pass overwrite techniques to prevent data recovery  
-- Uses memory forensics-based wiping methodologies for enhanced security  
-- Works at low-level file system operations for irreversible deletion  
-- Tested against common forensic recovery tools to ensure data is non-recoverable
+- Store, send, and receive Ethereum (ETH)
+- Smart contract-based transaction management
+- Secure transaction validation using require() statements
+- MetaMask wallet integration for authentication and transaction signing
+- Local blockchain testing using Ganache
+- Smart contract deployment and testing via Remix IDE
 
 ---
 
 ## 🛠️ Technologies Used
 
-- Python  
-- OS and File Handling Modules (`os`, `shutil`)  
-- Memory Forensics Concepts  
-- Secure Data Overwrite Techniques (multi-pass)  
+- Solidity
+- Ethereum Blockchain
+- Remix IDE
+- Ganache
+- MetaMask
+- Web3.js (if used for frontend interaction)
 
 ---
 
 ## 📂 Project Structure
 
-Secure-File-Eraser/
-│── eraser.py
+Crypto-Wallet/
+│── contracts/
+│ └── Wallet.sol
+│── migrations/ (if applicable)
+│── test/ (if applicable)
 │── README.md
-│── requirements.txt (if any)
-
----
-
-## ⚙️ Installation & Usage
+## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/cryptocurrency-wallet.git
-cd secure-file-eraser
-2️⃣ Install Dependencies
-bash
-Copy code
-pip install -r requirements.txt
-(If no dependencies, skip this step.)
+git clone https://github.com/your-username/crypto-wallet.git
+cd crypto-wallet
+2️⃣ Setup Ganache
+Install and open Ganache.
 
-3️⃣ Run the Secure File Eraser
-bash
-Copy code
-python eraser.py
-Input the full path of the file you want to securely delete.
+Create a new workspace.
 
-The file will be overwritten multiple times and then permanently deleted.
+Copy RPC Server URL.
+
+3️⃣ Deploy Smart Contract
+Open Remix IDE.
+
+Paste the Wallet.sol code.
+
+Compile using Solidity compiler.
+
+Connect Remix to Ganache (Injected Provider / Web3).
+
+Deploy the contract.
+
+4️⃣ Connect MetaMask
+Connect MetaMask to Ganache network.
+
+Import test account using private key from Ganache.
+
+Interact with the deployed contract.
 
 🔐 Security Features
-Multi-pass overwrite to prevent data remanence
+Input validation using require()
 
-Memory forensics-based deletion techniques to resist recovery
+Transaction verification before execution
 
-Works for files of any type and size
+Controlled fund transfer logic
 
-Prevents unauthorized recovery even using advanced forensic tools
+Protection against unauthorized access
 
 🧪 Testing
-Tested multiple file types (text, images, executables)
+Tested ETH transfer functionality on Ganache local blockchain.
 
-Verified non-recoverability using forensic analysis tools
+Verified transaction logs and balances after each operation.
 
-Ensured proper error handling for invalid file paths
+Ensured proper error handling for invalid transactions.
 
 📌 Future Improvements
-Add GUI for user-friendly interface
+Add frontend UI (React.js)
 
-Support folder-level secure deletion
+Implement event logging
 
-Implement logging and progress visualization
+Improve gas optimization
 
-Integrate with secure storage systems
+Add multi-user support
 
+Deploy on Ethereum testnet (Goerli / Sepolia)
 👨‍💻 Author
 Aditya Sharma
