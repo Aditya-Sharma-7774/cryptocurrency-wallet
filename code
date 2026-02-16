@@ -1,0 +1,27 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
+
+contract SimpleCryptoWallet {
+    // Event to track received ETH
+    event Received(address indexed sender, uint amount);
+    // Event to track sent ETH
+    event Sent(address indexed receiver, uint amount);
+
+    // Receive ETH function
+    receive() external payable {
+        emit Received(msg.sender, msg.value);
+    }
+
+    // Function to send ETH to another address
+    function sendEther(address payable _to, uint _amount) public {
+        require(_to != address(0), "Invalid address");
+        require(_amount <= address(this).balance, "Insufficient balance");
+        _to.transfer(_amount);
+        emit Sent(_to, _amount);
+    }
+
+    // Function to check wallet balance
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
+    }
+}
